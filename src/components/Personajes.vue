@@ -1,8 +1,12 @@
 <template>
-  <div class="app">
-    <div class="principal">
-      <img class="img" :src="personajes.src">
-      <p class="text">{{ personajes.nombre }}</p>
+  <div>
+    <div
+      class="principal"
+      v-for="(personaje, index) in personajes"
+      :key="index"
+    >
+      <div><img class="img" :src="personaje.src" alt="Personajes" /></div>
+      <p class="text">{{ personaje.nombre }}</p>
     </div>
   </div>
 </template>
@@ -10,14 +14,34 @@
 <script>
 export default {
   name: "Personajes",
-  
-  props: { personajes: { type: Object } },
-
+  data: () => ({
+    personajes: [
+      {
+        nombre: "Rick Sanchez",
+        src: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      },
+      {
+        nombre: "Morty Smith",
+        src: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      },
+      {
+        nombre: "Summer Smith",
+        src: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      },
+      {
+        nombre: "Beth Smith",
+        src: "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+      },
+      {
+        nombre: "Jerry Smith",
+        src: "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+      },
+    ],
+  }),
 };
 </script>
 
 <style>
-
 .principal {
   display: flex;
   flex-direction: 50%;
@@ -25,7 +49,7 @@ export default {
 }
 
 .img {
-  width: 250px;
+  width: 150px;
   border-radius: 50%;
   padding: 2rem;
 }

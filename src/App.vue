@@ -1,33 +1,24 @@
 <template>
   <div>
-    <Personajes v-for="(personaje, index) in personajes" :key="index" :personaje="personajes">
+    <Personajes />
   </div>
 </template>
 
 <script>
-import personajes from "./components/Personajes.vue";
+import Personajes from "./components/Personajes.vue";
 
 export default {
   name: "App",
   components: {
-    personajes,
+    Personajes,
   },
-  data: () => ({
-    personajes: [
-      {
-        nombre: "Rick Sanchez",
-        src: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      },
-      {
-        nombre: "Rick Sanchez",
-        src: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-      },
-      {
-        nombre: "Rick Sanchez",
-        src: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      },
-    ],
-  }),
 };
 </script>
-<style></style>
+
+<style>
+body {
+  background-image: url("https://rickandmortypod.com/wp-content/uploads/2018/11/cropped-RM_page-header_background1-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
