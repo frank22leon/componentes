@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <Personajes v-for="(personaje, index) in personajes" :key="index" :personaje="personajes">
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import personajes from "./components/Personajes.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    personajes,
   },
+  data: () => ({
+    personajes: [
+      {
+        nombre: "Rick Sanchez",
+        src: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      },
+      {
+        nombre: "Rick Sanchez",
+        src: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      },
+      {
+        nombre: "Rick Sanchez",
+        src: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      },
+    ],
+  }),
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
